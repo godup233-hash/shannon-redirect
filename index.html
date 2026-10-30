@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shannon API 已迁移至 COCO API</title>
+<meta name="description" content="Shannon API 已正式迁移至 COCO API，请访问新站 https://cocoapi.top">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://cocoapi.top/">
+<meta http-equiv="refresh" content="5; url=https://cocoapi.top/">
+<style>
+  :root {
+    --bg: #0f1115;
+    --card: #171a21;
+    --line: #262b35;
+    --text: #e8ecf3;
+    --muted: #8b95a7;
+    --accent: #e86a33;
+    --accent-soft: rgba(232, 106, 51, 0.12);
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f6f7f9;
+      --card: #ffffff;
+      --line: #e4e8ef;
+      --text: #1a1f27;
+      --muted: #6b7484;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+      "Hiragino Sans GB", "Microsoft YaHei", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  .card {
+    width: 100%;
+    max-width: 560px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 40px 32px;
+    text-align: center;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+  }
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  h1 {
+    margin: 0 0 10px;
+    font-size: 21px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+  }
+  p {
+    margin: 0 0 8px;
+    color: var(--muted);
+    font-size: 14px;
+  }
+  .url {
+    display: inline-block;
+    margin: 18px 0 22px;
+    padding: 10px 18px;
+    border-radius: 10px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    word-break: break-all;
+  }
+  .url:hover { text-decoration: underline; }
+  .btn {
+    display: block;
+    width: 100%;
+    padding: 13px 20px;
+    border: none;
+    border-radius: 10px;
+    background: var(--accent);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: opacity 0.15s ease;
+  }
+  .btn:hover { opacity: 0.88; }
+  .countdown {
+    margin-top: 14px;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .countdown b { color: var(--accent); font-weight: 600; }
+  footer {
+    margin-top: 26px;
+    padding-top: 18px;
+    border-top: 1px solid var(--line);
+    font-size: 12.5px;
+    color: var(--muted);
+  }
+  footer a { color: var(--muted); }
+</style>
+</head>
+<body>
+<main class="card">
+  <div class="logo">S</div>
+  <h1>Shannon API 已迁移</h1>
+  <p>原 Shannon API 已正式迁移至新平台 COCO API</p>
+  <a class="url" href="https://cocoapi.top/">https://cocoapi.top</a>
+  <a class="btn" href="https://cocoapi.top/" id="go">立即前往 COCO API</a>
+  <div class="countdown">将在 <b id="sec">5</b> 秒后自动跳转</div>
+  <footer>
+    如有疑问请联系 <a href="mailto:godupx@qq.com">godupx@qq.com</a>
+  </footer>
+</main>
+<script>
+(function () {
+  var target = "https://cocoapi.top/";
+  var el = document.getElementById("sec");
+  var left = 5;
+  var timer = setInterval(function () {
+    left -= 1;
+    if (el) el.textContent = String(Math.max(left, 0));
+    if (left <= 0) {
+      clearInterval(timer);
+      window.location.replace(target);
+    }
+  }, 1000);
+})();
+</script>
+</body>
+</html>
